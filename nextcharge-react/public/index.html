@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#060A0F" />
+    <meta name="description" content="NextCharge — Find & Book EV Charging Stations across India" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <title>NextCharge — Find & Book EV Charging Stations</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'Satoshi', sans-serif;
+        background: #060A0F;
+        color: #F0F4F8;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      :root {
+        --green: #00E676;
+        --green-dark: #00C853;
+        --bg: #060A0F;
+        --bg2: #0C1219;
+        --surface: #161E28;
+        --surface2: #1C2733;
+        --border: rgba(255,255,255,0.07);
+        --border-g: rgba(0,230,118,0.2);
+        --text: #F0F4F8;
+        --muted: #7A8EA0;
+      }
+      @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+      @keyframes slideUp { from{transform:translateY(40px);opacity:0} to{transform:translateY(0);opacity:1} }
+      @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+      @keyframes spin { to{transform:rotate(360deg)} }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
