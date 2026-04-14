@@ -8,7 +8,6 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
-require('dotenv').config();
 
 const connectDB = require('./config/database');
 const { connectRedis } = require('./config/redis');
@@ -29,7 +28,10 @@ const server = http.createServer(app);
 
 // ─── Socket.IO (Real-time station status) ────────────────────────────────────
 const io = new Server(server, {
-  cors: { origin: process.env.CLIENT_URL || '*', methods: ['GET', 'POST'] }
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
 });
 
 // Attach io to app so controllers can emit events
@@ -56,8 +58,7 @@ io.on('connection', (socket) => {
 app.use(helmet());
 app.use(compression());
 app.use(cors({
-  origin: process.env.CLIENT_URL || '*',
-  credentials: true,
+  origin: "*",
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -128,4 +129,4 @@ start();
 
 module.exports = { app, io };
 
-console.log("JWT_SECRET:", process.env.JWT_SECRET);
+

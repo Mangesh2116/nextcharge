@@ -13,7 +13,7 @@ const HOW_STEPS = [{ num: '01', icon: '🔍', title: 'Find your station', desc: 
 const CONNECTOR_TYPES = ['CCS2 (DC Fast — 150kW)', 'CHAdeMO (DC Fast)', 'Type 2 AC (7.2kW)', 'Bharat DC-001'];
 const FILTER_TABS = ['All', 'Fast DC', 'AC', 'CCS2'];
 
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/v1';
+const API_BASE = 'https://nextcharge.onrender.com/api/v1';
 async function apiCall(endpoint, opts = {}, token = null) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 5000);
