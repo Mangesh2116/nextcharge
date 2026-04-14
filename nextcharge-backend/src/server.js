@@ -129,4 +129,4 @@ start();
 
 module.exports = { app, io };
 
-
+require('dotenv').config();
